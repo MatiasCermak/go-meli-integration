@@ -20,10 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="955733be-0be9-4558-8537-6224ea110d6f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/pkg/controller/ItemsAll.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/controller/auth.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/router/router.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/controller/ItemsAll.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/controller/ItemsAll.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +50,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
-    <property name="last_opened_file_path" value="D:/GoDocs/lab3-tps" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../github.com/MatiasCermak/go-meli-integration" />
   </component>
   <component name="RunManager">
     <configuration name="go build go-meli-integration/pkg" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
@@ -87,26 +85,26 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="463" y="139" key="FileChooserDialogImpl" timestamp="1602606545286">
+    <state x="463" y="139" key="FileChooserDialogImpl" timestamp="1604546050636">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="463" y="139" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1602606545286" />
-    <state width="1323" height="194" key="GridCell.Tab.0.bottom" timestamp="1604542801818">
+    <state x="463" y="139" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1604546050636" />
+    <state width="1323" height="194" key="GridCell.Tab.0.bottom" timestamp="1604558625613">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="194" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1604542801818" />
-    <state width="1323" height="194" key="GridCell.Tab.0.center" timestamp="1604542801817">
+    <state width="1323" height="194" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1604558625613" />
+    <state width="1323" height="194" key="GridCell.Tab.0.center" timestamp="1604558625613">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="194" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1604542801817" />
-    <state width="1323" height="194" key="GridCell.Tab.0.left" timestamp="1604542801817">
+    <state width="1323" height="194" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1604558625613" />
+    <state width="1323" height="194" key="GridCell.Tab.0.left" timestamp="1604558625613">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="194" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1604542801817" />
-    <state width="1323" height="194" key="GridCell.Tab.0.right" timestamp="1604542801818">
+    <state width="1323" height="194" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1604558625613" />
+    <state width="1323" height="194" key="GridCell.Tab.0.right" timestamp="1604558625613">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="194" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1604542801818" />
+    <state width="1323" height="194" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1604558625613" />
     <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1604517316906">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
