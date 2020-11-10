@@ -1,7 +1,7 @@
 package router
 
 import (
-	"go-meli-integration/pkg/controller"
+	"github/MatiasCermak/go-meli-integration/pkg/controller"
 	"github.com/gin-gonic/gin"
 )
 
