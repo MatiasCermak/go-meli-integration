@@ -10,8 +10,8 @@ Para obtenerlo se utiliza la siguiente llamada:
 `https://auth.mercadolibre.com.ar/authorization?response_type=code&client_id=3589105139307129&redirect_uri=http://localhost:8080/auth`
 
 Al ejecutarse la llamada, se te redireccionará a la siguiente url:
-`
-
+`http://localhost:8080/auth?code=TG-5fac6cd21c19cc00060ee064-667732467`
+donde el parámetro "code" 
 se recibirá un JSON  como el siguiente:
 
 ``` [JSON] 
@@ -29,6 +29,6 @@ se recibirá un JSON  como el siguiente:
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0NzMwMjA5MDgsMjAxMTI4NzI1MCwyNT
+eyJoaXN0b3J5IjpbLTE2NjY5MTM0MDEsMjAxMTI4NzI1MCwyNT
 k4NzUwMDddfQ==
 -->
