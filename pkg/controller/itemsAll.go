@@ -4,56 +4,13 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-type ItemIds struct {
-	Results[] string `results`
-}
-
-type Questions[] struct {
-	Date_created string `json:"date_created"`
-	Item_id       string `json:"item_id"`
-	Status       string `json:"status"`
-	Text         string `json:"text"`
-	Id           int64  `json:"id"`
-	Answer       string `json:"answer"`
-}
-
-type Question struct {
-	Questn Questions `json:"questions""`
-}
-
-
-type Items struct{
-	Body struct {
-		Id    string
-		Title string
-		Price float32
-		Pictures[] map[string]string
-		Available_quantity int
-		Sold_quantity int
-	}
-
-}
-
-type Item struct{
-	Id    string
-	Title string
-	Price float32
-	Quantity int
-	SoldQuantity int
-	Picture string
-	Question Questions
-}
-
-
 func ItemsAll(c *gin.Context) {
 	token := c.Query("token")
 	userid := c.Query("userid")
 	var url string = "https://api.mercadolibre.com/users/" + userid + "/items/search?access_token=" + token
 	var res ItemIds
 	getAndMarshall(url, &res, c)
-	ch1 := make(chan Item)
-	ch2 := make(chan Question)
-	var response[] Item
+	var response[] ItemCarrier
 	if len(res.Results) == 0 {
 		c.JSON(400, struct {
 			Error string}{
@@ -61,6 +18,10 @@ func ItemsAll(c *gin.Context) {
 		})
 		return
 	}
+	ch1 := make(chan ItemCarrier)
+	ch2 := make(chan Question)
+	ch3 := make(chan []SalesCarrier)
+	go salesCollector(token, userid, ch3, c)
 	for i := 0; i < len(res.Results); i++ {
 		go itemCollector(token, res.Results[i], ch1, c)
 		go questionCollector(token, res.Results[i], ch2, c)
@@ -68,14 +29,17 @@ func ItemsAll(c *gin.Context) {
 		respContainer.Question = (<-ch2).Questn
 		response = append(response, respContainer)
 	}
-	c.JSON(200, response)
+	var finalResp ResponseCarrier
+	finalResp.Items = response
+	finalResp.Sales = <-ch3
+	c.JSON(200, finalResp)
 }
 
-func itemCollector(token, itemid string, ch1 chan Item, c *gin.Context){
+func itemCollector(token, itemid string, ch1 chan ItemCarrier, c *gin.Context){
 	var url string = "https://api.mercadolibre.com/items?ids="+ itemid +"&attributes=id,price,available_quantity,title,pictures,sold_quantity&access_token=" + token
 	var res[] Items
 	getAndMarshall(url, &res, c)
-	var resp Item
+	var resp ItemCarrier
 	resp.Quantity = res[0].Body.Available_quantity
 	resp.SoldQuantity = res[0].Body.Sold_quantity
 	resp.Id = res[0].Body.Id
@@ -99,4 +63,25 @@ func questionCollector(token, itemid string, ch2 chan Question, c *gin.Context) 
 		}
 	}
 	ch2 <- unansweredQ
+}
+
+func salesCollector(token, userid string, ch3 chan []SalesCarrier, c *gin.Context)  {
+	var url string = "https://api.mercadolibre.com/orders/search?seller=" + userid + "&order.status=paid&access_token=" + token
+	var res Sales
+	var resp []SalesCarrier
+	getAndMarshall(url, &res, c)
+	if len(res.Results[0].Payments) == 0 {
+		ch3 <- []SalesCarrier{}
+	}
+	for i := 0; i < len(res.Results[0].Payments); i++ {
+		var sales SalesCarrier
+		sales.Id = res.Results[0].Payments[i].ID
+		sales.Title = res.Results[0].Payments[i].Reason
+		sales.Date = res.Results[0].Payments[i].DateApproved
+		sales.PriceTotal = res.Results[0].Payments[i].TotalPaidAmount
+		sales.Price = res.Results[0].Payments[i].TransactionAmount
+		resp = append(resp, sales)
+	}
+	ch3 <- resp
+	
 }

@@ -7,7 +7,7 @@ import (
 	"net/http"
 )
 
-type answerOut struct {
+type AnswerOut struct {
 	Question_id string `json:"id"`
 	Status string `json:"status"`
 }
@@ -25,7 +25,7 @@ func AnswerQuestion(c *gin.Context)  {
 		c.JSON(500,err.Error())
 		return
 	}
-	var res answerOut
+	var res AnswerOut
 	err = json.Unmarshal(data, &res)
 	if err != nil{
 		c.JSON(500,err.Error())
