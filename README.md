@@ -8,7 +8,7 @@ Con esto se descargara la Api en tu dispositivo.
 ### 2.  Autenticación
 Para obtenerlo se utiliza la siguiente llamada:
 `https://auth.mercadolibre.com.ar/authorization?response_type=code&client_id=3589105139307129&redirect_uri=http://localhost:8080/auth`
-
+Se redic
 Al ejecutarse la llamada, se recibirá un JSON  como el siguiente:
 
 ``` [JSON] 
@@ -20,12 +20,12 @@ Al ejecutarse la llamada, se recibirá un JSON  como el siguiente:
 	"User_id":667732467,
 	"Refresh_token":"TG-5fac6cd21c19cc00060ee065-667732467"
 }
-nl```
+```
 
 ### 3. Endpoints
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyOTcwNzQyMDYsMjAxMTI4NzI1MCwyNT
+eyJoaXN0b3J5IjpbLTEzOTUzODI3NTEsMjAxMTI4NzI1MCwyNT
 k4NzUwMDddfQ==
 -->
