@@ -8,8 +8,9 @@ Con esto se descargara la Api en tu dispositivo.
 ### 2.  Obtener Access Token
 Para obtenerlo se utiliza la siguiente llamada:
 `https://auth.mercadolibre.com.ar/authorization?response_type=code&client_id=3589105139307129&redirect_uri=http://localhost:8080/auth`
-
+Al ejecur
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAxMTI4NzI1MCwyNTk4NzUwMDddfQ==
+eyJoaXN0b3J5IjpbMTcxMzIxOTYxLDIwMTEyODcyNTAsMjU5OD
+c1MDA3XX0=
 -->
