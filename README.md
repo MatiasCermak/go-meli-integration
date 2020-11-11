@@ -5,7 +5,7 @@ Repositorio para la materia LAB III de la Universidad Blas Pascal
 Para descargar la Api se necesitara correr el siguiente comando en tu terminal de Go:
 `go get -u github.com/MatiasCermak/go-meli-integration`
 Con esto se descargara la Api en tu dispositivo.
-### 2.  Obtener Access Token
+### 2.  A
 Para obtenerlo se utiliza la siguiente llamada:
 `https://auth.mercadolibre.com.ar/authorization?response_type=code&client_id=3589105139307129&redirect_uri=http://localhost:8080/auth`
 
@@ -19,9 +19,10 @@ Al ejecutarse la llamada, se recibirá un JSON  como el siguiente:
 	"Scope":"offline_access read write",
 	"User_id":667732467,
 	"Refresh_token":"TG-5fac6cd21c19cc00060ee065-667732467"
-} ```
+} `
+### 3. Endpoints
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk1NTEwMjQzLDIwMTEyODcyNTAsMjU5OD
-c1MDA3XX0=
+eyJoaXN0b3J5IjpbLTExMjU5NjI1NzgsMjAxMTI4NzI1MCwyNT
+k4NzUwMDddfQ==
 -->
