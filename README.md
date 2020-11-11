@@ -11,9 +11,10 @@ Para obtenerlo se utiliza la siguiente llamada:
 
 Al ejecutarse la llamada, se recibirá un JSON  como el siguiente:
 
+ [JavaScript]
 {"Access_token":"APP_USR-3589105139307129-111122-5aa4c31191b3b9b761a94f36ade5675c-667732467","Token_type":"bearer","Expires_in":21600,"Scope":"offline_access read write","User_id":667732467,"Refresh_token":"TG-5fac6cd21c19cc00060ee065-667732467"}
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2MzQ5MjA3MTEsMjAxMTI4NzI1MCwyNT
-k4NzUwMDddfQ==
+eyJoaXN0b3J5IjpbMTE4OTYwODQxOCwyMDExMjg3MjUwLDI1OT
+g3NTAwN119
 -->
