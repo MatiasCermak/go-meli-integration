@@ -29,8 +29,12 @@ Aquí tendremos nuestro Access Token y nuestro UserId, que serán utilizados par
 ### 3. Endpoints
 
 `/items/all?token=$ACCESS_TOKEN&userid=$USER_ID`
-Este endpoint devuelve todos los items
+Este endpoint devuelve todos los items con sus respectivas preguntas de un vendedor y las ventas concretadas.
+Trayendo un JSON  como el siguiente:
+
+``` [JSON] 
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5Mzk0ODM5MjMsMTYyOTUwMDg5NCwyMT
+eyJoaXN0b3J5IjpbLTEyMTk1NDA5NjMsMTYyOTUwMDg5NCwyMT
 Q0MzMxMTEwLDIwMTEyODcyNTAsMjU5ODc1MDA3XX0=
 -->
