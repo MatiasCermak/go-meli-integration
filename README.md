@@ -118,9 +118,9 @@ Trayendo un JSON  como el siguiente:
 			"id": 11597337179,
 			"answer": ""
 		}
-	]
+			]
 }
-],
+			],
 "Sales": [
 {
 "Id": 12227685685,
@@ -147,7 +147,7 @@ Trayendo un JSON  como el siguiente:
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTczNTUwNjA1NiwtNjc5NTc0OTMwLDE2Mj
+eyJoaXN0b3J5IjpbLTUwNDA4MzM0NCwtNjc5NTc0OTMwLDE2Mj
 k1MDA4OTQsMjE0NDMzMTExMCwyMDExMjg3MjUwLDI1OTg3NTAw
 N119
 -->
