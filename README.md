@@ -137,17 +137,17 @@ Trayendo un JSON  como el siguiente:
 		"PriceTotal": 80662.49
 	},
 	{
-	"Id": 12249166880,
-	"Title": "Item De Prueba - Por Favor, No Ofertar",
-	"Date": "2020-11-11T19:10:28.000-04:00",
-	"Price": 3500,
-	"PriceTotal": 4287.49
+		"Id": 12249166880,
+		"Title": "Item De Prueba - Por Favor, No Ofertar",
+		"Date": "2020-11-11T19:10:28.000-04:00",
+		"Price": 3500,
+		"PriceTotal": 4287.49
 	}
-	]
+		]
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg5MTA3MjkwNCwtNjc5NTc0OTMwLDE2Mj
+eyJoaXN0b3J5IjpbMTk5NDQwMjgyNCwtNjc5NTc0OTMwLDE2Mj
 k1MDA4OTQsMjE0NDMzMTExMCwyMDExMjg3MjUwLDI1OTg3NTAw
 N119
 -->
