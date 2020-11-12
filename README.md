@@ -13,7 +13,7 @@ Al ejecutarse la llamada, se te redireccionará a la siguiente url:
 `http://localhost:8080/auth?code=TG-5fac6cd21c19cc00060ee064-667732467`
 donde el parámetro "code" representa al código de autorización enviado por Mercado Libre.
 
-se recibirá un JSON  como el siguiente:
+Tras lo cual, se recibirá en el body un JSON  como el siguiente:
 
 ``` [JSON] 
 {
@@ -30,6 +30,6 @@ se recibirá un JSON  como el siguiente:
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ1NzI1MzkxMywyMDExMjg3MjUwLDI1OT
+eyJoaXN0b3J5IjpbLTExODkzNDc5OSwyMDExMjg3MjUwLDI1OT
 g3NTAwN119
 -->
