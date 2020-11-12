@@ -28,10 +28,9 @@ Tras lo cual, se recibirá en el body un JSON  como el siguiente:
 Aquí tendremos nuestro Access Token y nuestro UserId, que serán utilizados para las diferentes llamadas posteriores a nuestra Api.
 ### 3. Endpoints
 
-
-
 `/items/all?token=$ACCESS_TOKEN&userid=$USER_ID`
+Este endpoint devuelve todos los items
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3ODQ4NjQzOTIsMTYyOTUwMDg5NCwyMT
+eyJoaXN0b3J5IjpbLTE5Mzk0ODM5MjMsMTYyOTUwMDg5NCwyMT
 Q0MzMxMTEwLDIwMTEyODcyNTAsMjU5ODc1MDA3XX0=
 -->
