@@ -1,6 +1,6 @@
 # go-meli-integration
+######	 Matias Cermak - Jeremias Fernandez
 Repositorio para la materia LAB III de la Universidad Blas Pascal.
-	######	 Matias Cermak - Jeremias Fernandez
 ## Instrucciones de uso
 ### 1. Descarga de Api
 Para descargar la Api se necesitara correr el siguiente comando en tu terminal de Go:
@@ -147,6 +147,6 @@ Trayendo un JSON  como el siguiente:
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzEwNDIxNTkyLDE2Mjk1MDA4OTQsMjE0ND
-MzMTExMCwyMDExMjg3MjUwLDI1OTg3NTAwN119
+eyJoaXN0b3J5IjpbLTY3OTU3NDkzMCwxNjI5NTAwODk0LDIxND
+QzMzExMTAsMjAxMTI4NzI1MCwyNTk4NzUwMDddfQ==
 -->
