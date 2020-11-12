@@ -63,61 +63,61 @@ Trayendo un JSON  como el siguiente:
 					]
 	},
 {
-	"Id": "MLA896801928",
-	"Title": "Item De Test - No Ofertar",
-	"Price": 80000,
-	"Quantity": 1,
-	"SoldQuantity": 0,
-	"Picture": "http://http2.mlstatic.com/D_996968-MLA44005467265_112020-O.jpg",
-	"Question": [
-		{
-			"date_created": "2020-11-11T18:49:22.795-04:00",
-			"item_id": "MLA896801928",
-			"status": "UNANSWERED",
-			"text": "Permutas?",
-			"id": 11597301371,
-			"answer": ""
-		},
-		{
-			"date_created": "2020-11-11T18:50:13.728-04:00",
-			"item_id": "MLA896801928",
-			"status": "UNANSWERED",
-			"text": "Vi una publicacion igual mas barata",
-			"id": 11597300952,
-			"answer": ""
-		},
-		{
-			"date_created": "2020-11-11T18:51:50.574-04:00",
-			"item_id": "MLA896801928",
-			"status": "UNANSWERED",
-			"text": "Lo tenes en azul?",
-			"id": 11597306025,
-			"answer": ""
-		},
-		{
-			"date_created": "2020-11-11T18:52:28.623-04:00",
-			"item_id": "MLA896801928",
-			"status": "UNANSWERED",
-			"text": "Envias a domicilio?",
-			"id": 11597306462,
-			"answer": ""
-		},
-		{
-			"date_created": "2020-11-11T19:06:41.032-04:00",
-			"item_id": "MLA896801928",
-			"status": "UNANSWERED",
-			"text": "Envias a Domicilio?",
-			"id": 11597336065,
-			"answer": ""
-		},
-		{
-			"date_created": "2020-11-11T19:06:55.255-04:00",
-			"item_id": "MLA896801928",
-			"status": "UNANSWERED",
-			"text": "Aceptas ofertas?",
-			"id": 11597337179,
-			"answer": ""
-		}
+		"Id": "MLA896801928",
+		"Title": "Item De Test - No Ofertar",
+		"Price": 80000,
+		"Quantity": 1,
+		"SoldQuantity": 0,
+		"Picture": "http://http2.mlstatic.com/D_996968-MLA44005467265_112020-O.jpg",
+		"Question": [
+			{
+				"date_created": "2020-11-11T18:49:22.795-04:00",
+				"item_id": "MLA896801928",
+				"status": "UNANSWERED",
+				"text": "Permutas?",
+				"id": 11597301371,
+				"answer": ""
+			},
+			{
+				"date_created": "2020-11-11T18:50:13.728-04:00",
+				"item_id": "MLA896801928",
+				"status": "UNANSWERED",
+				"text": "Vi una publicacion igual mas barata",
+				"id": 11597300952,
+				"answer": ""
+			},
+			{
+				"date_created": "2020-11-11T18:51:50.574-04:00",
+				"item_id": "MLA896801928",
+				"status": "UNANSWERED",
+				"text": "Lo tenes en azul?",
+				"id": 11597306025,
+				"answer": ""
+			},
+			{
+				"date_created": "2020-11-11T18:52:28.623-04:00",
+				"item_id": "MLA896801928",
+				"status": "UNANSWERED",
+				"text": "Envias a domicilio?",
+				"id": 11597306462,
+				"answer": ""
+			},
+			{
+				"date_created": "2020-11-11T19:06:41.032-04:00",
+				"item_id": "MLA896801928",
+				"status": "UNANSWERED",
+				"text": "Envias a Domicilio?",
+				"id": 11597336065,
+				"answer": ""
+			},
+			{
+				"date_created": "2020-11-11T19:06:55.255-04:00",
+				"item_id": "MLA896801928",
+				"status": "UNANSWERED",
+				"text": "Aceptas ofertas?",
+				"id": 11597337179,
+				"answer": ""
+			}
 				]
 }
 			],
@@ -147,7 +147,7 @@ Trayendo un JSON  como el siguiente:
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk5NDQwMjgyNCwtNjc5NTc0OTMwLDE2Mj
-k1MDA4OTQsMjE0NDMzMTExMCwyMDExMjg3MjUwLDI1OTg3NTAw
-N119
+eyJoaXN0b3J5IjpbNDU5OTIzOTIwLC02Nzk1NzQ5MzAsMTYyOT
+UwMDg5NCwyMTQ0MzMxMTEwLDIwMTEyODcyNTAsMjU5ODc1MDA3
+XX0=
 -->
