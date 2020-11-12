@@ -28,8 +28,8 @@ Tras lo cual, se recibirá en el body un JSON  como el siguiente:
 Aquí tendremos nuestro Access Token y nuestro UserId, que serán utilizados para las diferentes llamadas posteriores a nuestra Api.
 ### 3. Endpoints
 
- agua tierra fuego aire, hace muchos años todos vivian en armonia hasta que la nacion del fuego ataco. Solo el Avatar, ma
+ agua tierra fuego aire, hace muchos años todos vivian en armonia hasta que la nacion del fuego ataco. Solo el Avatar, maestro de los 4 elementos podia detenerlos. Pero cuando el mundo mas lo necesitaba, desaparecio
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTcwMzgwOTcxOSwyMDExMjg3MjUwLDI1OT
+eyJoaXN0b3J5IjpbMjE0NDMzMTExMCwyMDExMjg3MjUwLDI1OT
 g3NTAwN119
 -->
