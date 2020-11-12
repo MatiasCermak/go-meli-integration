@@ -60,7 +60,7 @@ Trayendo un JSON  como el siguiente:
 			"id": 11597339942,
 			"answer": ""
 		}
-				]
+					]
 	},
 {
 	"Id": "MLA896801928",
@@ -118,36 +118,36 @@ Trayendo un JSON  como el siguiente:
 			"id": 11597337179,
 			"answer": ""
 		}
-			]
+				]
 }
 			],
 "Sales": [
 {
-"Id": 12227685685,
-"Title": "Item De Prueba - Por Favor, No Ofertar",
-"Date": "2020-11-10T01:16:16.000-04:00",
-"Price": 3500,
-"PriceTotal": 4174.99
-},
-{
-"Id": 12249026115,
-"Title": "Item De Test - No Ofertar",
-"Date": "2020-11-11T18:57:39.000-04:00",
-"Price": 80000,
-"PriceTotal": 80662.49
-},
-{
-"Id": 12249166880,
-"Title": "Item De Prueba - Por Favor, No Ofertar",
-"Date": "2020-11-11T19:10:28.000-04:00",
-"Price": 3500,
-"PriceTotal": 4287.49
-}
-]
+		"Id": 12227685685,
+		"Title": "Item De Prueba - Por Favor, No Ofertar",
+		"Date": "2020-11-10T01:16:16.000-04:00",
+		"Price": 3500,
+		"PriceTotal": 4174.99
+	},
+	{
+		"Id": 12249026115,
+		"Title": "Item De Test - No Ofertar",
+		"Date": "2020-11-11T18:57:39.000-04:00",
+		"Price": 80000,
+		"PriceTotal": 80662.49
+	},
+	{
+	"Id": 12249166880,
+	"Title": "Item De Prueba - Por Favor, No Ofertar",
+	"Date": "2020-11-11T19:10:28.000-04:00",
+	"Price": 3500,
+	"PriceTotal": 4287.49
+	}
+	]
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTUwNDA4MzM0NCwtNjc5NTc0OTMwLDE2Mj
+eyJoaXN0b3J5IjpbLTg5MTA3MjkwNCwtNjc5NTc0OTMwLDE2Mj
 k1MDA4OTQsMjE0NDMzMTExMCwyMDExMjg3MjUwLDI1OTg3NTAw
 N119
 -->
