@@ -61,32 +61,32 @@ Trayendo un JSON  como el siguiente:
 			"answer": ""
 		}
 				]
-},
+	},
 {
-"Id": "MLA896801928",
-"Title": "Item De Test - No Ofertar",
-"Price": 80000,
-"Quantity": 1,
-"SoldQuantity": 0,
-"Picture": "http://http2.mlstatic.com/D_996968-MLA44005467265_112020-O.jpg",
-"Question": [
-{
-"date_created": "2020-11-11T18:49:22.795-04:00",
-"item_id": "MLA896801928",
-"status": "UNANSWERED",
-"text": "Permutas?",
-"id": 11597301371,
-"answer": ""
-},
-{
-"date_created": "2020-11-11T18:50:13.728-04:00",
-"item_id": "MLA896801928",
-"status": "UNANSWERED",
-"text": "Vi una publicacion igual mas barata",
-"id": 11597300952,
-"answer": ""
-},
-{
+	"Id": "MLA896801928",
+	"Title": "Item De Test - No Ofertar",
+	"Price": 80000,
+	"Quantity": 1,
+	"SoldQuantity": 0,
+	"Picture": "http://http2.mlstatic.com/D_996968-MLA44005467265_112020-O.jpg",
+	"Question": [
+		{
+			"date_created": "2020-11-11T18:49:22.795-04:00",
+			"item_id": "MLA896801928",
+			"status": "UNANSWERED",
+			"text": "Permutas?",
+			"id": 11597301371,
+			"answer": ""
+		},
+		{
+			"date_created": "2020-11-11T18:50:13.728-04:00",
+			"item_id": "MLA896801928",
+			"status": "UNANSWERED",
+			"text": "Vi una publicacion igual mas barata",
+			"id": 11597300952,
+			"answer": ""
+		},
+		{
 "date_created": "2020-11-11T18:51:50.574-04:00",
 "item_id": "MLA896801928",
 "status": "UNANSWERED",
@@ -147,7 +147,7 @@ Trayendo un JSON  como el siguiente:
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAwMTAzNDMwNCwtNjc5NTc0OTMwLDE2Mj
-k1MDA4OTQsMjE0NDMzMTExMCwyMDExMjg3MjUwLDI1OTg3NTAw
-N119
+eyJoaXN0b3J5IjpbLTE2NzQ1ODE5MzYsLTY3OTU3NDkzMCwxNj
+I5NTAwODk0LDIxNDQzMzExMTAsMjAxMTI4NzI1MCwyNTk4NzUw
+MDddfQ==
 -->
