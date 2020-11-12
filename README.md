@@ -43,7 +43,7 @@ Trayendo un JSON  como el siguiente:
 		"Quantity": 1,
 		"SoldQuantity": 0,
 		"Picture": "http://http2.mlstatic.com/D_651089-MLA43985576583_112020-O.jpg",
-		"Question": [
+		"Question":	[
 		{
 			"date_created": "2020-11-05T17:33:18.673-04:00",
 			"item_id": "MLA896805185",
@@ -52,15 +52,15 @@ Trayendo un JSON  como el siguiente:
 			"id": 11585807777,
 			"answer": ""
 		},
-	{
-		"date_created": "2020-11-11T19:09:28.063-04:00",
-		"item_id": "MLA896805185",
-		"status": "UNANSWERED",
-		"text": "Lo tenes en rojo?",
-		"id": 11597339942,
-		"answer": ""
-	}
-]
+		{
+			"date_created": "2020-11-11T19:09:28.063-04:00",
+			"item_id": "MLA896805185",
+			"status": "UNANSWERED",
+			"text": "Lo tenes en rojo?",
+			"id": 11597339942,
+			"answer": ""
+		}
+				]
 },
 {
 "Id": "MLA896801928",
@@ -147,6 +147,7 @@ Trayendo un JSON  como el siguiente:
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY3OTU3NDkzMCwxNjI5NTAwODk0LDIxND
-QzMzExMTAsMjAxMTI4NzI1MCwyNTk4NzUwMDddfQ==
+eyJoaXN0b3J5IjpbMTAwMTAzNDMwNCwtNjc5NTc0OTMwLDE2Mj
+k1MDA4OTQsMjE0NDMzMTExMCwyMDExMjg3MjUwLDI1OTg3NTAw
+N119
 -->
