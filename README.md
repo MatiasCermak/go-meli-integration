@@ -87,38 +87,38 @@ Trayendo un JSON  como el siguiente:
 			"answer": ""
 		},
 		{
-"date_created": "2020-11-11T18:51:50.574-04:00",
-"item_id": "MLA896801928",
-"status": "UNANSWERED",
-"text": "Lo tenes en azul?",
-"id": 11597306025,
-"answer": ""
-},
-{
-"date_created": "2020-11-11T18:52:28.623-04:00",
-"item_id": "MLA896801928",
-"status": "UNANSWERED",
-"text": "Envias a domicilio?",
-"id": 11597306462,
-"answer": ""
-},
-{
-"date_created": "2020-11-11T19:06:41.032-04:00",
-"item_id": "MLA896801928",
-"status": "UNANSWERED",
-"text": "Envias a Domicilio?",
-"id": 11597336065,
-"answer": ""
-},
-{
-"date_created": "2020-11-11T19:06:55.255-04:00",
-"item_id": "MLA896801928",
-"status": "UNANSWERED",
-"text": "Aceptas ofertas?",
-"id": 11597337179,
-"answer": ""
-}
-]
+			"date_created": "2020-11-11T18:51:50.574-04:00",
+			"item_id": "MLA896801928",
+			"status": "UNANSWERED",
+			"text": "Lo tenes en azul?",
+			"id": 11597306025,
+			"answer": ""
+		},
+		{
+			"date_created": "2020-11-11T18:52:28.623-04:00",
+			"item_id": "MLA896801928",
+			"status": "UNANSWERED",
+			"text": "Envias a domicilio?",
+			"id": 11597306462,
+			"answer": ""
+		},
+		{
+			"date_created": "2020-11-11T19:06:41.032-04:00",
+			"item_id": "MLA896801928",
+			"status": "UNANSWERED",
+			"text": "Envias a Domicilio?",
+			"id": 11597336065,
+			"answer": ""
+		},
+		{
+			"date_created": "2020-11-11T19:06:55.255-04:00",
+			"item_id": "MLA896801928",
+			"status": "UNANSWERED",
+			"text": "Aceptas ofertas?",
+			"id": 11597337179,
+			"answer": ""
+		}
+	]
 }
 ],
 "Sales": [
@@ -147,7 +147,7 @@ Trayendo un JSON  como el siguiente:
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2NzQ1ODE5MzYsLTY3OTU3NDkzMCwxNj
-I5NTAwODk0LDIxNDQzMzExMTAsMjAxMTI4NzI1MCwyNTk4NzUw
-MDddfQ==
+eyJoaXN0b3J5IjpbLTczNTUwNjA1NiwtNjc5NTc0OTMwLDE2Mj
+k1MDA4OTQsMjE0NDMzMTExMCwyMDExMjg3MjUwLDI1OTg3NTAw
+N119
 -->
