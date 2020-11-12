@@ -25,11 +25,11 @@ Tras lo cual, se recibirá en el body un JSON  como el siguiente:
 	"Refresh_token":"TG-5fac6cd21c19cc00060ee065-667732467"
 }
 ```
-Aquí tendremos nuestro Access Token y nuestro UserId, que serán utilizados p
+Aquí tendremos nuestro Access Token y nuestro UserId, que serán utilizados para las diferentes llamadas posteriores a nuestra Api.
 ### 3. Endpoints
 
-
+Aire agua tierra fuego 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwMzQzOTE1MzQsMjAxMTI4NzI1MCwyNT
-k4NzUwMDddfQ==
+eyJoaXN0b3J5IjpbLTI4MjM0NDMzOCwyMDExMjg3MjUwLDI1OT
+g3NTAwN119
 -->
