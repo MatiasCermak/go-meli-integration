@@ -44,13 +44,13 @@ Trayendo un JSON  como el siguiente:
 		"Picture": "http://http2.mlstatic.com/D_651089-MLA43985576583_112020-O.jpg",
 		"Question": [
 		{
-"date_created": "2020-11-05T17:33:18.673-04:00",
-"item_id": "MLA896805185",
-"status": "UNANSWERED",
-"text": "Cuánto sale, boeeeeh",
-"id": 11585807777,
-"answer": ""
-},
+			"date_created": "2020-11-05T17:33:18.673-04:00",
+			"item_id": "MLA896805185",
+			"status": "UNANSWERED",
+			"text": "Cuánto sale, boeeeeh",
+			"id": 11585807777,
+			"answer": ""
+		},
 {
 "date_created": "2020-11-11T19:09:28.063-04:00",
 "item_id": "MLA896805185",
@@ -146,6 +146,6 @@ Trayendo un JSON  como el siguiente:
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTEwNjMwMjgxMiwxNjI5NTAwODk0LDIxND
-QzMzExMTAsMjAxMTI4NzI1MCwyNTk4NzUwMDddfQ==
+eyJoaXN0b3J5IjpbLTgwNTE0NzQwLDE2Mjk1MDA4OTQsMjE0ND
+MzMTExMCwyMDExMjg3MjUwLDI1OTg3NTAwN119
 -->
