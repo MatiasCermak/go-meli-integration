@@ -1,5 +1,6 @@
 # go-meli-integration
-Repositorio para la materia LAB III de la Universidad Blas Pascal
+Repositorio para la materia LAB III de la Universidad Blas Pascal.
+	######	 Matias Cermak - Jeremias Fernandez
 ## Instrucciones de uso
 ### 1. Descarga de Api
 Para descargar la Api se necesitara correr el siguiente comando en tu terminal de Go:
@@ -52,13 +53,13 @@ Trayendo un JSON  como el siguiente:
 			"answer": ""
 		},
 	{
-"date_created": "2020-11-11T19:09:28.063-04:00",
-"item_id": "MLA896805185",
-"status": "UNANSWERED",
-"text": "Lo tenes en rojo?",
-"id": 11597339942,
-"answer": ""
-}
+		"date_created": "2020-11-11T19:09:28.063-04:00",
+		"item_id": "MLA896805185",
+		"status": "UNANSWERED",
+		"text": "Lo tenes en rojo?",
+		"id": 11597339942,
+		"answer": ""
+	}
 ]
 },
 {
@@ -146,6 +147,6 @@ Trayendo un JSON  como el siguiente:
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTMwNTQxODYxMiwxNjI5NTAwODk0LDIxND
-QzMzExMTAsMjAxMTI4NzI1MCwyNTk4NzUwMDddfQ==
+eyJoaXN0b3J5IjpbMzEwNDIxNTkyLDE2Mjk1MDA4OTQsMjE0ND
+MzMTExMCwyMDExMjg3MjUwLDI1OTg3NTAwN119
 -->
