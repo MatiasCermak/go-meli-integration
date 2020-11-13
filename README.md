@@ -60,9 +60,9 @@ Trayendo un JSON  como el siguiente:
 			"id": 11597339942,
 			"answer": ""
 		}
-					]
+				]
 	},
-{
+	{
 			"Id": "MLA896801928",
 			"Title": "Item De Test - No Ofertar",
 			"Price": 80000,
@@ -120,9 +120,9 @@ Trayendo un JSON  como el siguiente:
 				}
 					]
 	}
-			],
+		],
 "Sales": [
-{
+	{
 		"Id": 12227685685,
 		"Title": "Item De Prueba - Por Favor, No Ofertar",
 		"Date": "2020-11-10T01:16:16.000-04:00",
@@ -143,7 +143,7 @@ Trayendo un JSON  como el siguiente:
 		"Price": 3500,
 		"PriceTotal": 4287.49
 	}
-		]
+	]
 }
 ```
 
