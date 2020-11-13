@@ -29,6 +29,7 @@ func AnswerQuestion(c *gin.Context)  {
 	err = json.Unmarshal(data, &res)
 	if err != nil{
 		c.JSON(500,err.Error())
+		return
 	}
 	c.JSON(200,res)
 }
