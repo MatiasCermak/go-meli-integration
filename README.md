@@ -147,7 +147,7 @@ Trayendo un JSON  como el siguiente:
 }
 ```
 
-## Usuarios utilizado para test y desarrollo
+## Usuarios utilizados para test y desarrollo
 
 ``` [JSON] 
 {
