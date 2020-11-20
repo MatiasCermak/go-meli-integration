@@ -147,6 +147,26 @@ Trayendo un JSON  como el siguiente:
 }
 ```
 
+## Usuarios utilizado para test y desarrollo
+
+``` [JSON] 
+{
+    "id": 667732467,
+    "nickname": "TETE5351566",
+    "password": "qatest8546",
+    "site_status": "active",
+    "email": "test_user_93656370@testuser.com"
+}
+{
+    "id": 670356756,
+    "nickname": "TETE9556626",
+    "password": "qatest3891",
+    "site_status": "active",
+    "email": "test_user_41560562@testuser.com"
+}
+```
+
+
 <!--stackedit_data:
 eyJoaXN0b3J5IjpbNzIxMzI2MjE0LC02Nzk1NzQ5MzAsMTYyOT
 UwMDg5NCwyMTQ0MzMxMTEwLDIwMTEyODcyNTAsMjU5ODc1MDA3
