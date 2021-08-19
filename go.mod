@@ -1,4 +1,4 @@
-module github/MatiasCermak/go-meli-integration
+module github.com/MatiasCermak/go-meli-integration
 
 go 1.15
 
