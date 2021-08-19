@@ -1,6 +1,6 @@
 package main
 
-import "github/MatiasCermak/go-meli-integration/pkg/router"
+import "github.com/MatiasCermak/go-meli-integration/pkg/router"
 
 func main()  {
 	router.Run()
