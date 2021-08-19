@@ -1,5 +1,5 @@
 module github.com/MatiasCermak/go-meli-integration
 
-go 1.15
+go 1.16
 
-require github.com/gin-gonic/gin v1.6.3
+require github.com/gin-gonic/gin v1.7.4
