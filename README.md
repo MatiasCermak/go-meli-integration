@@ -1,5 +1,5 @@
 # go-meli-integration
-######	 Matias Cermak - Jeremias Fernandez
+######	 Matias Cermak
 Repositorio para la materia LAB III de la Universidad Blas Pascal.
 ## Instrucciones de uso
 ### 1. Descarga de Api
