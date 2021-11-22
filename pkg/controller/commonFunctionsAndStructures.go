@@ -98,8 +98,7 @@ type ItemCarrier struct {
 }
 
 type ItemCarrierDefinite struct {
-	ItemID int64
-	Item   ItemCarrier
+	Item ItemCarrier
 
 	Questn Questions
 }
