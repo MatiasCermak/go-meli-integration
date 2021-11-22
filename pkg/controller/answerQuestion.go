@@ -2,34 +2,48 @@ package controller
 
 import (
 	"encoding/json"
-	"github.com/gin-gonic/gin"
 	"io/ioutil"
 	"net/http"
+
+	"github.com/gin-gonic/gin"
 )
 
-type AnswerOut struct {
-	Question_id string `json:"id"`
-	Status string `json:"status"`
+func AnswerQuestion(c *gin.Context) {
+	token := c.Query("token")
+	var url string = "https://api.mercadolibre.com/answers?access_token=" + token
+	resp, err := http.Post(url, "application/json", c.Request.Body)
+	if err != nil {
+		c.JSON(resp.StatusCode, err.Error())
+		return
+	}
+	data, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		c.JSON(500, err.Error())
+		return
+	}
+	res := make(AnswerOut)
+	err = json.Unmarshal(data, &res)
+	if err != nil {
+		c.JSON(500, err.Error())
+		return
+	}
+	c.JSON(resp.StatusCode, res)
 }
 
-func AnswerQuestion(c *gin.Context)  {
+/*
+func AnswerQuestion(c *gin.Context) {
 	token := c.Query("token")
- 	var url string = "https://api.mercadolibre.com/answers?access_token=" + token
-	resp, err :=http.Post(url, "application/json", c.Request.Body)
- 	if err !=nil{
- 		c.JSON(resp.StatusCode,err.Error())
+	var url string = "https://api.mercadolibre.com/answers?access_token=" + token
+	resp, err := http.Post(url, "application/json", c.Request.Body)
+	if err != nil {
+		c.JSON(resp.StatusCode, err.Error())
 		return
 	}
-	data,err := ioutil.ReadAll(resp.Body)
-	if err !=nil{
-		c.JSON(500,err.Error())
+	data, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		c.JSON(500, err.Error())
 		return
 	}
-	var res AnswerOut
-	err = json.Unmarshal(data, &res)
-	if err != nil{
-		c.JSON(500,err.Error())
-		return
-	}
-	c.JSON(200,res)
+	c.JSON(resp.StatusCode, data)
 }
+*/

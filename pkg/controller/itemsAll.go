@@ -1,7 +1,12 @@
 package controller
 
 import (
+	"strconv"
+	"sync"
+
+	"github.com/MatiasCermak/go-meli-integration/pkg/db"
 	"github.com/gin-gonic/gin"
+	"gorm.io/gorm"
 )
 
 func ItemsAll(c *gin.Context) {
@@ -10,7 +15,6 @@ func ItemsAll(c *gin.Context) {
 	var url string = "https://api.mercadolibre.com/users/" + userid + "/items/search?access_token=" + token
 	var res ItemIds
 	getAndMarshall(url, &res, c)
-	var response []ItemCarrier
 	if len(res.Results) == 0 {
 		c.JSON(400, struct {
 			Error string
@@ -19,51 +23,83 @@ func ItemsAll(c *gin.Context) {
 		})
 		return
 	}
-	ch1 := make(chan ItemCarrier)
-	ch2 := make(chan Question)
+	var itmCar FinalType
+	itmCar.m = make(map[string]ItemCarrierDefinite)
 	ch3 := make(chan []SalesCarrier)
 	go salesCollector(token, userid, ch3, c)
+	var wg sync.WaitGroup
 	for i := 0; i < len(res.Results); i++ {
-		go itemCollector(token, res.Results[i], ch1, c)
-		go questionCollector(token, res.Results[i], ch2, c)
-		respContainer := <-ch1
-		respContainer.Question = (<-ch2).Questn
-		response = append(response, respContainer)
+		wg.Add(2)
+		go itemCollector(token, res.Results[i], &itmCar, c, &wg)
+		go questionCollector(token, res.Results[i], &itmCar, c, &wg)
 	}
 	var finalResp ResponseCarrier
-	finalResp.Items = response
+	wg.Wait()
+	values := []ItemCarrierDefinite{}
+	for _, value := range itmCar.m {
+		values = append(values, value)
+	}
+	finalResp.Items = values
 	finalResp.Sales = <-ch3
+	DB := db.Initialize()
+	if err := DB.Save(&finalResp.Sales).Error; err != nil {
+		// always handle error like this, cause errors maybe happened when connection failed or something.
+		// record not found...
+		if gorm.ErrRecordNotFound == err {
+			DB.Create(&finalResp.Sales) // create new record from newUser
+		}
+	}
 	c.JSON(200, finalResp)
 }
 
-func itemCollector(token, itemid string, ch1 chan ItemCarrier, c *gin.Context) {
+func itemCollector(token, itemid string, itmcar *FinalType, c *gin.Context, wg *sync.WaitGroup) {
+	defer wg.Done()
 	var url string = "https://api.mercadolibre.com/items?ids=" + itemid + "&attributes=id,price,available_quantity,title,pictures,sold_quantity&access_token=" + token
 	var res []Items
 	getAndMarshall(url, &res, c)
 	var resp ItemCarrier
 	resp.Quantity = res[0].Body.Available_quantity
 	resp.SoldQuantity = res[0].Body.Sold_quantity
-	resp.Id = res[0].Body.Id
+	resp.Id, _ = strconv.ParseInt(res[0].Body.Id[3:], 10, 64)
 	resp.Picture = res[0].Body.Pictures[0]["url"]
 	resp.Price = res[0].Body.Price
 	resp.Title = res[0].Body.Title
-	ch1 <- resp
+	itmcar.RWMutex.Lock()
+	if entry, ok := itmcar.m[itemid]; ok {
+		entry.Item = resp
+		itmcar.m[itemid] = entry
+	} else {
+		itmcar.m[itemid] = ItemCarrierDefinite{Item: resp, Questn: Questions{}}
+	}
+	DB := db.Initialize()
+	if err := DB.Save(itmcar.m[itemid].Item).Error; err != nil {
+		// always handle error like this, cause errors maybe happened when connection failed or something.
+		// record not found...
+		if gorm.ErrRecordNotFound == err {
+			DB.Create(itmcar.m[itemid].Item) // create new record from newUser
+		}
+	}
+	itmcar.RWMutex.Unlock()
 }
 
-func questionCollector(token, itemid string, ch2 chan Question, c *gin.Context) {
+func questionCollector(token, itemid string, itmcar *FinalType, c *gin.Context, wg *sync.WaitGroup) {
+	defer wg.Done()
 	var url string = "https://api.mercadolibre.com/questions/search?item=" + itemid + "&access_token=" + token
 	var res Question
 	getAndMarshall(url, &res, c)
 	var unansweredQ Question
-	if len(res.Questn) == 0 {
-		ch2 <- Question{}
-	}
 	for i := len(res.Questn) - 1; i >= 0; i-- {
 		if res.Questn[i].Status == "UNANSWERED" {
-			unansweredQ.Questn = append(unansweredQ.Questn, res.Questn[i])
+			itmcar.Lock()
+			if entry, ok := itmcar.m[itemid]; ok {
+				entry.Questn = append(entry.Questn, res.Questn[i])
+				itmcar.m[itemid] = entry
+			} else {
+				itmcar.m[itemid] = ItemCarrierDefinite{Item: ItemCarrier{}, Questn: append(unansweredQ.Questn, res.Questn[i])}
+			}
+			itmcar.Unlock()
 		}
 	}
-	ch2 <- unansweredQ
 }
 
 func salesCollector(token, userid string, ch3 chan []SalesCarrier, c *gin.Context) {
@@ -72,7 +108,7 @@ func salesCollector(token, userid string, ch3 chan []SalesCarrier, c *gin.Contex
 	var resp []SalesCarrier
 	getAndMarshall(url, &res, c)
 	if len(res.Results) == 0 {
-		ch3 <- []SalesCarrier{}
+		resp = []SalesCarrier{}
 	}
 	for i := 0; i < len(res.Results); i++ {
 		for j := 0; j < len(res.Results[i].Payments); j++ {
@@ -86,6 +122,6 @@ func salesCollector(token, userid string, ch3 chan []SalesCarrier, c *gin.Contex
 		}
 
 	}
-	ch3 <- resp
 
+	ch3 <- resp
 }

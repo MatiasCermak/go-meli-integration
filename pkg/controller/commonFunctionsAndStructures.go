@@ -2,36 +2,40 @@ package controller
 
 import (
 	"encoding/json"
-	"github.com/gin-gonic/gin"
 	"io/ioutil"
 	"net/http"
+	"sync"
+
+	"github.com/gin-gonic/gin"
 )
 
 //-Common Structures------------------------------------
 
 type ItemIds struct {
-	Results[] string `json:"results"`
+	Results []string `json:"results"`
 }
 
-type Items struct{
+type Items struct {
 	Body struct {
-		Id    string
-		Title string
-		Price float32
-		Pictures[] map[string]string
+		Id                 string
+		Title              string
+		Price              float32
+		Pictures           []map[string]string
 		Available_quantity int
-		Sold_quantity int
+		Sold_quantity      int
 	}
-
 }
 
-type Questions[] struct {
-	Date_created string `json:"date_created"`
-	Item_id       string `json:"item_id"`
-	Status       string `json:"status"`
-	Text         string `json:"text"`
-	Id           int64  `json:"id"`
-	Answer       string `json:"answer"`
+type Questions []struct {
+	DateCreated           string `json:"date_created"`
+	ItemID                string `json:"item_id"`
+	SellerID              int    `json:"seller_id"`
+	Status                string `json:"status"`
+	Text                  string `json:"text"`
+	ID                    int64  `json:"id" gorm: primaryKey`
+	DeletedFromListing    bool   `json:"deleted_from_listing"`
+	Answer                string `json:"answer"`
+	ItemCarrierDefiniteID int64
 }
 
 type Question struct {
@@ -58,7 +62,7 @@ type Sales struct {
 			DateLastModified     string      `json:"date_last_modified"`
 			CouponAmount         int         `json:"coupon_amount"`
 			AvailableActions     []string    `json:"available_actions"`
-			ShippingCost         float64         `json:"shipping_cost"`
+			ShippingCost         float64     `json:"shipping_cost"`
 			InstallmentAmount    float64     `json:"installment_amount"`
 			DateCreated          string      `json:"date_created"`
 			ActivationURI        interface{} `json:"activation_uri"`
@@ -81,39 +85,50 @@ type Sales struct {
 			Status             string      `json:"status"`
 			TransactionOrderID interface{} `json:"transaction_order_id"`
 		} `json:"payments"`
-	}	
+	}
 }
 
-//Este struct será el enviado como respuesta
-type ItemCarrier struct{ 
-	Id    string
-	Title string
-	Price float32
-	Quantity int
+type ItemCarrier struct {
+	Id           int64
+	Title        string
+	Price        float32
+	Quantity     int
 	SoldQuantity int
-	Picture string
-	Question Questions
-
+	Picture      string
 }
 
-type SalesCarrier struct{
-	Id int64
-	Title string
-	Date string
-	Price float64
+type ItemCarrierDefinite struct {
+	ItemID int64
+	Item   ItemCarrier
+
+	Questn Questions
+}
+
+type SalesCarrier struct {
+	Id         int64
+	Title      string
+	Date       string
+	Price      float64
 	PriceTotal float64
 }
 
-type ResponseCarrier struct{
-	Items []ItemCarrier
+type ResponseCarrier struct {
+	Items []ItemCarrierDefinite
 	Sales []SalesCarrier
 }
 
+type FinalType struct {
+	sync.RWMutex
+	m map[string]ItemCarrierDefinite
+}
+
+type AnswerOut map[string]interface{}
+
 //-Common Functions----------------------------------------
 
-func getAndMarshall(url string, res interface{}, c *gin.Context)  {
+func getAndMarshall(url string, res interface{}, c *gin.Context) {
 	req, erro := http.Get(url)
-	if req.StatusCode != 200 || erro != nil{
+	if req.StatusCode != 200 || erro != nil {
 		c.JSON(req.StatusCode, erro.Error())
 		return
 	}
@@ -123,9 +138,10 @@ func getAndMarshall(url string, res interface{}, c *gin.Context)  {
 		c.JSON(req.StatusCode, erro.Error())
 		return
 	}
+
 	erro = json.Unmarshal(data, &res)
 	if erro != nil {
-		c.JSON(req.StatusCode, erro.Error())
+		c.JSON(req.StatusCode, erro.Error()+url)
 		return
 	}
 }
