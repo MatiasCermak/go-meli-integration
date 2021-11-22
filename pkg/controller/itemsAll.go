@@ -24,13 +24,14 @@ func ItemsAll(c *gin.Context) {
 		return
 	}
 	var itmCar FinalType
+	DB := db.Initialize()
 	itmCar.m = make(map[string]ItemCarrierDefinite)
 	ch3 := make(chan []SalesCarrier)
 	go salesCollector(token, userid, ch3, c)
 	var wg sync.WaitGroup
 	for i := 0; i < len(res.Results); i++ {
 		wg.Add(2)
-		go itemCollector(token, res.Results[i], &itmCar, c, &wg)
+		go itemCollector(token, res.Results[i], &itmCar, c, &wg, DB)
 		go questionCollector(token, res.Results[i], &itmCar, c, &wg)
 	}
 	var finalResp ResponseCarrier
@@ -41,7 +42,6 @@ func ItemsAll(c *gin.Context) {
 	}
 	finalResp.Items = values
 	finalResp.Sales = <-ch3
-	DB := db.Initialize()
 	if err := DB.Save(&finalResp.Sales).Error; err != nil {
 		// always handle error like this, cause errors maybe happened when connection failed or something.
 		// record not found...
@@ -52,7 +52,7 @@ func ItemsAll(c *gin.Context) {
 	c.JSON(200, finalResp)
 }
 
-func itemCollector(token, itemid string, itmcar *FinalType, c *gin.Context, wg *sync.WaitGroup) {
+func itemCollector(token, itemid string, itmcar *FinalType, c *gin.Context, wg *sync.WaitGroup, DB *gorm.DB) {
 	defer wg.Done()
 	var url string = "https://api.mercadolibre.com/items?ids=" + itemid + "&attributes=id,price,available_quantity,title,pictures,sold_quantity&access_token=" + token
 	var res []Items
@@ -71,7 +71,6 @@ func itemCollector(token, itemid string, itmcar *FinalType, c *gin.Context, wg *
 	} else {
 		itmcar.m[itemid] = ItemCarrierDefinite{Item: resp, Questn: Questions{}}
 	}
-	DB := db.Initialize()
 	if err := DB.Save(itmcar.m[itemid].Item).Error; err != nil {
 		// always handle error like this, cause errors maybe happened when connection failed or something.
 		// record not found...
