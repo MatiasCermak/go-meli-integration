@@ -8,7 +8,7 @@ Para descargar la Api se necesitara correr el siguiente comando en tu terminal d
 Con esto se descargara la Api en tu dispositivo.
 ### 2.  Autenticación
 Para obtenerlo se utiliza la siguiente llamada:
-`https://auth.mercadolibre.com.ar/authorization?response_type=code&client_id=3589105139307129&redirect_uri=http://localhost:8080/auth`
+`https://auth.mercadolibre.com.ar/authorization?response_type=code&client_id=3589105139307129&redirect_uri=https://go-meli-integration.herokuapp.com/auth`
 
 Al ejecutarse la llamada, se te redireccionará a la siguiente url:
 `http://localhost:8080/auth?code=TG-5fac6cd21c19cc00060ee064-667732467`
