@@ -91,7 +91,7 @@ func PublishItem(c *gin.Context) {
 
 	send.PlainText = res.Description
 
-	dat2, err := json.Marshal(res.Description)
+	dat2, err := json.Marshal(send)
 	if err != nil {
 		c.JSON(500, err.Error())
 		return
@@ -105,6 +105,7 @@ func PublishItem(c *gin.Context) {
 		return
 	}
 
+	fmt.Printf("%+v 2", string(url+"/"+str.Id+"/description"))
 	req2.Header.Add("Authorization", " Bearer "+token)
 	req2.Header.Add("Content-Type", "application/json")
 
@@ -114,21 +115,25 @@ func PublishItem(c *gin.Context) {
 		return
 	}
 
+	fmt.Printf("%+v 3", string(str.Id))
+
 	dta2, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		c.JSON(500, err.Error())
 		return
 	}
 
+	fmt.Printf("%+v 4", string(str.Id))
 	fmt.Printf("this is %+v", string(dta2))
 
-	out := make(AnswerOut)
+	out := make(map[string]string)
 	err = json.Unmarshal(dta2, &out)
-	if err != nil {
+	if err != nil && len(dta2) != 0 {
 		c.JSON(500, err.Error())
 		return
 	}
 
+	fmt.Printf("%+v 5", string(str.Id))
 	c.JSON(resp.StatusCode, out)
 
 }

@@ -27,14 +27,14 @@ type Items struct {
 }
 
 type Questions []struct {
-	DateCreated           string `json:"date_created"`
-	ItemID                string `json:"item_id"`
-	SellerID              int    `json:"seller_id"`
-	Status                string `json:"status"`
-	Text                  string `json:"text"`
-	ID                    int64  `json:"id" gorm: primaryKey`
-	DeletedFromListing    bool   `json:"deleted_from_listing"`
-	Answer                string `json:"answer"`
+	DateCreated        string `json:"date_created"`
+	ItemID             string `json:"item_id"`
+	SellerID           int    `json:"seller_id"`
+	Status             string `json:"status"`
+	Text               string `json:"text"`
+	ID                 int64  `json:"id" gorm: primaryKey`
+	DeletedFromListing bool   `json:"deleted_from_listing"`
+	//Answer                string `json:"answer"`
 	ItemCarrierDefiniteID int64
 }
 
