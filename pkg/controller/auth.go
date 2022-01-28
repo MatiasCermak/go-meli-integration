@@ -27,7 +27,7 @@ func Auth(c *gin.Context) {
 		"client_id":     "3589105139307129",
 		"client_secret": "knzqc1moyoKYFMlnHidSm7NlRMl16Dtj",
 		"code":          code,
-		"redirect_uri":  "https://go-meli-integration.herokuapp.com/auth",
+		"redirect_uri":  "https://localhost:3000/auth",
 	})
 	request, _ := http.NewRequest("POST", "https://api.mercadolibre.com/oauth/token", bytes.NewBuffer(requestBody))
 	request.Header.Set("accept", "application/json")
