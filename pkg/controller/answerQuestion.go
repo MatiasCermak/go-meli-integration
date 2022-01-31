@@ -27,6 +27,9 @@ func AnswerQuestion(c *gin.Context) {
 		c.JSON(500, err.Error())
 		return
 	}
+	c.Header("Access-Control-Allow-Origin", "*")
+	c.Header("Access-Control-Allow-Methods", "POST")
+	c.Header("Access-Control-Allow-Headers", "Content-Type, Authorization, X-Requested-With")
 	c.JSON(resp.StatusCode, res)
 }
 

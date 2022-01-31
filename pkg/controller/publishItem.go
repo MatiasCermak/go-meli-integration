@@ -134,6 +134,9 @@ func PublishItem(c *gin.Context) {
 	}
 
 	fmt.Printf("%+v 5", string(str.Id))
+	c.Header("Access-Control-Allow-Origin", "*")
+	c.Header("Access-Control-Allow-Methods", "POST")
+	c.Header("Access-Control-Allow-Headers", "Content-Type, Authorization, X-Requested-With")
 	c.JSON(resp.StatusCode, out)
 
 }

@@ -49,6 +49,9 @@ func ItemsAll(c *gin.Context) {
 			DB.Create(&finalResp.Sales) // create new record from newUser
 		}
 	}
+	c.Header("Access-Control-Allow-Origin", "*")
+	c.Header("Access-Control-Allow-Methods", "GET")
+	c.Header("Access-Control-Allow-Headers", "Content-Type, Authorization, X-Requested-With")
 	c.JSON(200, finalResp)
 }
 
