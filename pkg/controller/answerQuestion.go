@@ -9,6 +9,11 @@ import (
 )
 
 func AnswerQuestion(c *gin.Context) {
+	if c.Request.Method == "OPTIONS" {
+		c.Writer.WriteHeader(http.StatusOK)
+		return
+	}
+
 	token := c.Query("token")
 	var url string = "https://api.mercadolibre.com/answers?access_token=" + token
 	resp, err := http.Post(url, "application/json", c.Request.Body)
