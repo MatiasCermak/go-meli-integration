@@ -1,6 +1,7 @@
 package controller
 
 import (
+	"net/http"
 	"strconv"
 	"sync"
 
@@ -10,6 +11,12 @@ import (
 )
 
 func ItemsAll(c *gin.Context) {
+
+	if c.Request.Method == "OPTIONS" {
+		c.Writer.WriteHeader(http.StatusOK)
+		return
+	}
+
 	token := c.Query("token")
 	userid := c.Query("userid")
 	var url string = "https://api.mercadolibre.com/users/" + userid + "/items/search?access_token=" + token
