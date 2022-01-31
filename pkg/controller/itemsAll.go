@@ -13,7 +13,6 @@ import (
 func ItemsAll(c *gin.Context) {
 	c.Header("Access-Control-Allow-Origin", "*")
 	c.Header("Access-Control-Allow-Methods", "GET, OPTIONS")
-	c.Header("Access-Control-Allow-Headers", "Content-Type, Authorization, X-Requested-With")
 
 	if c.Request.Method == "OPTIONS" {
 		c.Writer.WriteHeader(http.StatusOK)
