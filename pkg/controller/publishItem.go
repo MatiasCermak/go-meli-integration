@@ -36,6 +36,16 @@ type InBound struct {
 }
 
 func PublishItem(c *gin.Context) {
+
+	c.Header("Access-Control-Allow-Origin", "*")
+	c.Header("Access-Control-Allow-Methods", "POST, OPTIONS")
+	c.Header("Access-Control-Allow-Headers", "Content-Type, Authorization, X-Requested-With")
+
+	if c.Request.Method == "OPTIONS" {
+		c.Writer.WriteHeader(http.StatusOK)
+		return
+	}
+
 	token := c.Query("token")
 	var url string = "https://api.mercadolibre.com/items"
 	data, err := ioutil.ReadAll(c.Request.Body)
