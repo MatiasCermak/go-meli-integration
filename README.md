@@ -11,7 +11,7 @@ Para obtenerlo se utiliza la siguiente llamada:
 `https://auth.mercadolibre.com.ar/authorization?response_type=code&client_id=3589105139307129&redirect_uri=http://localhost:3000/auth`
 
 Al ejecutarse la llamada, se te redireccionará a la siguiente url:
-`http://localhost:8080/auth?code=TG-5fac6cd21c19cc00060ee064-667732467`
+`http://localhost:3000/auth?code=TG-5fac6cd21c19cc00060ee064-667732467`
 donde el parámetro "code" representa al código de autorización enviado por Mercado Libre.
 
 Tras lo cual, se recibirá en el body un JSON  como el siguiente:
